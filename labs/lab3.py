@@ -41,7 +41,15 @@ def lagrange_interpolation(a: float, b: float, f_expr: sp.Expr, n: int, nodes: i
     return L
 
 
-def derivative(f_expr: sp.Expr, order: int):
+def derivative(f_expr: sp.Expr, order: int) -> sp.Expr:
+    """
+    Calculates the derivative of a given function
+
+    :param f_expr: the function to be differentiated
+    :param order: the order of derivative to compute
+
+    :return: a SymPy expression representing the derivative
+    """
 
     x_sym = sp.Symbol('x')
 
@@ -55,8 +63,8 @@ def error_estimate(a: float, b: float, f_expr: sp.Expr, x_val: float, n: int, no
 
     :param a: the left endpoint of the interval
     :param b: the right endpoint of the interval
-    :param f: the function to be differentiated
-    :param x: the point at which to evaluate the derivative error
+    :param f_expr: the function to be differentiated
+    :param x_val: the point at which to evaluate the derivative error
     :param n: the degree of interpolating polynomial
     :param nodes: the number of nodes to use for interpolation
 

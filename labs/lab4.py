@@ -142,11 +142,10 @@ def weddle(f: Callable[[float], float], a: float, b: float, n: int) -> float:
 
     :return: Approximate value of the integral
     """
-    nodes = n + 1
-
     if n % 6 != 0:
-        print("Ошибка! число интервалов не кратно 6")
-        return 0
+        raise ValueError("Число интервалов должно быть кратно 6")
+
+    nodes = n + 1
 
     x_values = np.linspace(a, b, nodes)
     f_values = [f(x) for x in x_values]
