@@ -298,64 +298,64 @@ def adaptive_integration(f: Callable[[float], float],
         return I_curr, intervals
 
 
-a = 1.0
-b = 1.5
-f = lambda x: (x - 1) ** 2 - exp(-x)
+a = 0.5
+b = 1.0
+f = lambda x: x ** 2 - log(x+2, 10)
 
 methods_info = [
     {
         "name": "Левые прямоугольники",
         "method": left_rectangles,
-        "epsilon": 1e-4,
+        "epsilon": 1e-3,
         "intervals": 2,
         "order": None
     },
     {
         "name": "Правые прямоугольники",
         "method": right_rectangles,
-        "epsilon": 1e-4,
+        "epsilon": 1e-3,
         "intervals": 2,
         "order": None
     },
     {
         "name": "Центральные прямоугольники",
         "method": central_rectangles,
-        "epsilon": 1e-4,
+        "epsilon": 1e-3,
         "intervals": 2,
         "order": None
     },
     {
         "name": "Формула трапеции",
         "method": trapezoid,
-        "epsilon": 1e-4,
+        "epsilon": 1e-3,
         "intervals": 2,
         "order": None
     },
     {
         "name": "Формула Симпсона",
         "method": simpson,
-        "epsilon": 1e-8,
+        "epsilon": 1e-4,
         "intervals": 2,
         "order": None
     },
     {
         "name": "Формула Веддля",
         "method": weddle,
-        "epsilon": 1e-8,
+        "epsilon": 1e-4,
         "intervals": 6,
         "order": None
     },
     {
         "name": "Формула Ньютона-Котеса порядка 4",
         "method": newton_cotes,
-        "epsilon": 1e-12,
+        "epsilon": 1e-4,
         "intervals": 1,
         "order": 4
     },
     {
         "name": "Формула Гаусса порядка 4",
         "method": gauss,
-        "epsilon": 1e-12,
+        "epsilon": 1e-4,
         "intervals": 1,
         "order": 4
     }
